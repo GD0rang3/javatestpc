@@ -39,9 +39,11 @@ import mindustry.world.meta.*;
 import static mindustry.Vars.*;
 import static mindustry.type.ItemStack.*;
 
-public class java-pc-test extends Mod{
+public class javatestpc extends Mod{
     //walls - erekir
-      graphiteWall, graphiteWallLarge
+      graphiteWall
+    //turrets
+    death
     ;
 
     public java-pc-test(){
@@ -73,12 +75,7 @@ public class java-pc-test extends Mod{
             researchCostMultiplier: 0.1f;
                 envDisabled |= Env.scorching;
         }};
-        graphiteWallLarge= new Wall ("graphite-wall-large"){{
-            requirements(Category.defense, new ItemStack [] { new ItemStack(Items.graphite, 24)});
-            health= 130 * wallHealthMultiplier * 4;
-            researchCostMultiplier: 0.1f;
-                envDisabled |= Env.scorching;
-        }};
+
                 death = new ItemTurret("death"){{
             requirements(Category.turret, with(Items.copper, 100, Items.graphite, 80, Items.titanium, 50));
             ammo(
