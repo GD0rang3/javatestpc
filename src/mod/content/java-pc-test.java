@@ -79,6 +79,34 @@ public class java-pc-test extends Mod{
             researchCostMultiplier: 0.1f;
                 envDisabled |= Env.scorching;
         }};
+                death = new ItemTurret("death"){{
+            requirements(Category.turret, with(Items.copper, 100, Items.graphite, 80, Items.titanium, 50));
+            ammo(
+                Items.copper,  new BasicBulletType(2.5f, 11){{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 900f;
+                    ammoMultiplier =500;
+                }},
+            );
+
+            size = 10;
+            range = 1000f;
+            reload = 31f;
+            consumeAmmoOnce = false;
+            ammoEjectBack = 3f;
+            recoil = 0f;
+            shake = 1f;
+            shoot.shots = 49;
+            shoot.shotDelay = 3f;
+
+            ammoUseEffect = Fx.casing2;
+            scaledHealth = 2400;
+            shootSound = Sounds.shootBig;
+
+            limitRange();
+            coolant = consumeCoolant(2f);
+        }};
                 
     }
 
